@@ -1,10 +1,13 @@
-import GenerateMnemonic from "./components/GenerateMnemonic";
+import GenerateMnemonic from "./screens/GenerateMnemonic";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <>
-      <GenerateMnemonic />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/generate" element={<GenerateMnemonic />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

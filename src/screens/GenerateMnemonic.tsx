@@ -8,8 +8,8 @@ const GenerateMnemonic = () => {
     <div>
       <div>
         <button
-          onClick={async function () {
-            const mn = await generateMnemonic();
+          onClick={function () {
+            const mn = generateMnemonic();
             setMnemonic(mn);
           }}
         >
@@ -18,7 +18,7 @@ const GenerateMnemonic = () => {
       </div>
 
       <div>
-        <input type="text" value={mnemonic} className="w-full"></input>
+        <input type="text" value={mnemonic} className="w-full" />
       </div>
     </div>
   );
