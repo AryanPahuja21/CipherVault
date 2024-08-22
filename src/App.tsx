@@ -5,7 +5,6 @@ import Wallet from "./screens/Wallet";
 
 function App() {
   const mnemonic = localStorage.getItem("mnemonic");
-  console.log(mnemonic);
   return (
     <div className="h-full bg-[#111111] text-white">
       <BrowserRouter>
@@ -13,10 +12,10 @@ function App() {
           {mnemonic ? (
             <Route path="/" element={<Wallet />} />
           ) : (
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/generate" element={<GenerateMnemonic />} />
-            </Routes>
+            <Route path="/" element={<Home />} />
+          )}
+          {!mnemonic && (
+            <Route path="/generate" element={<GenerateMnemonic />} />
           )}
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>

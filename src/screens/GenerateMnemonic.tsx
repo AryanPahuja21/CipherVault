@@ -3,11 +3,12 @@ import { useState } from "react";
 import Footer from "../components/Footer";
 import { MdContentCopy } from "react-icons/md";
 import { FaWallet } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const GenerateMnemonic = () => {
   const [mnemonic, setMnemonic] = useState("");
-
   const [copied, setCopied] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <div className="h-screen flex flex-col items-center text-center">
@@ -73,8 +74,10 @@ const GenerateMnemonic = () => {
               safe and do not share it with anyone.
             </p>
             <button
-              onClick={function () {
+              onClick={() => {
                 localStorage.setItem("mnemonic", mnemonic);
+                navigate("/");
+                window.location.reload();
               }}
               className="mt-4 bg-zinc-300 hover:bg-zinc-200 text-black px-4 py-2 lg:px-5 lg:py-3 rounded-lg flex justify-center items-center gap-2"
             >
