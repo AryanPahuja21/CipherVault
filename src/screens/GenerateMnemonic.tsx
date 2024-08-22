@@ -21,18 +21,26 @@ const GenerateMnemonic = () => {
             const mn = generateMnemonic();
             setMnemonic(mn);
           }}
-          className="bg-zinc-500 text-black px-4 py-2 lg:px-5 lg:py-3 rounded-lg"
+          className="bg-zinc-500 hover:bg-zinc-400 text-black px-4 py-2 lg:px-5 lg:py-3 rounded-lg"
         >
           Create Seed Phrase
         </button>
       </div>
-      <div>
-        <input
-          type="text"
-          value={mnemonic}
-          className="w-full bg-[#111111] text-white"
-        />
+      <div className="mt-10 border border-zinc-400 rounded-md bg-zinc-800">
+        <div className="grid grid-cols-4 gap-4 p-4">
+          {mnemonic.split(" ").map((word, index) => {
+            return (
+              <div
+                key={index}
+                className="md:text-2xl bg-[#111111] px-1 py-2 sm:px-4 sm:py-3 rounded-md"
+              >
+                {word}
+              </div>
+            );
+          })}
+        </div>
       </div>
+
       <Footer />
     </div>
   );
