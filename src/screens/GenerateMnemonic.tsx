@@ -1,6 +1,7 @@
 import { generateMnemonic } from "bip39";
 import { useState } from "react";
 import Footer from "../components/Footer";
+import { MdContentCopy } from "react-icons/md";
 
 const GenerateMnemonic = () => {
   const [mnemonic, setMnemonic] = useState("");
@@ -26,20 +27,33 @@ const GenerateMnemonic = () => {
           Create Seed Phrase
         </button>
       </div>
-      <div className="mt-10 border border-zinc-400 rounded-md bg-zinc-800">
-        <div className="grid grid-cols-4 gap-4 p-4">
-          {mnemonic.split(" ").map((word, index) => {
-            return (
-              <div
-                key={index}
-                className="md:text-2xl bg-[#111111] px-1 py-2 sm:px-4 sm:py-3 rounded-md"
-              >
-                {word}
-              </div>
-            );
-          })}
-        </div>
-      </div>
+      {mnemonic && (
+        <button
+          onClick={function () {
+            navigator.clipboard.writeText(mnemonic);
+          }}
+          className=""
+        >
+          <div className="mt-10 border border-zinc-400 rounded-md bg-zinc-800">
+            <div className="grid grid-cols-4 gap-4 p-4">
+              {mnemonic.split(" ").map((word, index) => {
+                return (
+                  <div
+                    key={index}
+                    className="md:text-2xl bg-[#111111] px-1 py-2 sm:px-4 sm:py-3 rounded-md"
+                  >
+                    {word}
+                  </div>
+                );
+              })}
+            </div>
+            <div className="px-5 py-3 flex items-center text-zinc-400">
+              <MdContentCopy />
+              <p className="mx-2">Click anywhere to copy</p>
+            </div>
+          </div>
+        </button>
+      )}
 
       <Footer />
     </div>
