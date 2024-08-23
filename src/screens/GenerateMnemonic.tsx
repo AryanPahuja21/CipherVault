@@ -37,7 +37,6 @@ const GenerateMnemonic = () => {
           onClick={function () {
             navigator.clipboard.writeText(mnemonic);
           }}
-          className=""
         >
           <div
             className="mt-10 border border-zinc-400 rounded-md bg-zinc-800"
@@ -58,7 +57,7 @@ const GenerateMnemonic = () => {
             <div className="px-5 py-3 flex items-center text-zinc-400">
               <MdContentCopy />
               {
-                <p className="mx-2">
+                <p className="mx-2 select-none">
                   {copied ? "Copied to clipboard!" : "Click anywhere to copy"}
                 </p>
               }

@@ -1,3 +1,4 @@
+import Footer from "../components/Footer";
 import Header from "../components/Header";
 import NewWalletButton from "../components/NewWalletButton";
 
@@ -15,6 +16,7 @@ const FirstWallet = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
