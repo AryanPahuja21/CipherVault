@@ -1,6 +1,16 @@
 import wallets from "../utils/wallets.json";
 
+interface Wallet {
+  id: number;
+  name: string;
+  icon: string;
+}
+
 const NewWalletDialog = () => {
+  const addWallet = (wallet: Wallet) => () => {
+    console.log(wallet);
+  };
+
   return (
     <div className="pt-8 p-4 border border-zinc-200 bg-zinc-900 rounded-md">
       {wallets.map((wallet) => {
@@ -8,6 +18,7 @@ const NewWalletDialog = () => {
           <div
             key={wallet.id}
             className="w-80 h-20 flex items-center p-4 border border-zinc-300 rounded-md bg-zinc-800 hover:bg-zinc-700 mb-4 cursor-pointer"
+            onClick={addWallet(wallet)}
           >
             <img src={wallet.icon} alt="" className="w-7 select-none" />
             <div className="flex-1">
