@@ -2,15 +2,22 @@ import GenerateMnemonic from "./screens/GenerateMnemonic";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Home from "./screens/Home";
 import Wallet from "./screens/Wallet";
+import FirstWallet from "./screens/FirstWallet";
 
 function App() {
   const mnemonic = localStorage.getItem("mnemonic");
+  const wallet = localStorage.getItem("wallet");
+
   return (
     <div className="h-full bg-[#111111] text-white">
       <BrowserRouter>
         <Routes>
           {mnemonic ? (
-            <Route path="/" element={<Wallet />} />
+            wallet ? (
+              <Route path="/" element={<Wallet />} />
+            ) : (
+              <Route path="/" element={<FirstWallet />} />
+            )
           ) : (
             <Route path="/" element={<Home />} />
           )}
