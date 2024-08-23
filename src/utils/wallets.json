@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "name": "New Solana Wallet",
+    "icon": "/solana.svg"
+  },
+  {
+    "id": 2,
+    "name": "New Ethereum Wallet",
+    "icon": "/ethereum.svg"
+  }
+]
