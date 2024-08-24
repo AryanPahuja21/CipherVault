@@ -13,7 +13,7 @@ const GenerateMnemonic = () => {
   return (
     <div className="h-screen flex flex-col items-center text-center">
       <div>
-        <h1 className="mt-24 sm:mb-2 text-2xl sm:text-4xl lg:text-5xl font-bold ">
+        <h1 className="mt-4 sm:mt-24 sm:mb-2 text-2xl sm:text-4xl lg:text-5xl font-bold ">
           Generate a Secret Recovery Phrase
         </h1>
         <p className="sm:text-xl lg:text-2xl text-zinc-400">

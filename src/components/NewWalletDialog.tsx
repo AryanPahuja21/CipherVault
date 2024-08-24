@@ -10,6 +10,7 @@ const NewWalletDialog = () => {
     }
     if (wallet.id === 2) {
       addEthWallet(mnemonic);
+      window.location.reload();
     }
   };
 

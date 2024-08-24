@@ -12,6 +12,4 @@ export const addEthWallet = async (mnemonic: string) => {
   const privateKey = child.privateKey;
   const wallet = new Wallet(privateKey);
   localStorage.setItem("ethWallets", JSON.stringify([...ethWallets, wallet]));
-  console.log("Wallet added successfully");
-  console.log(wallet);
 };

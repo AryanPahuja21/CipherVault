@@ -9,7 +9,7 @@ function App() {
   const wallets = localStorage.getItem("ethWallets");
 
   return (
-    <div className="h-full bg-[#111111] text-white">
+    <div className="h-full text-white">
       <BrowserRouter>
         <Routes>
           {mnemonic ? (
