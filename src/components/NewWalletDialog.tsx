@@ -1,14 +1,14 @@
 import wallets from "../utils/wallets.json";
 import { addEthWallet } from "../wallets/EthWallet";
+import { addSolanaWallet } from "../wallets/SolanaWallet";
 
 const NewWalletDialog = () => {
   const mnemonic = localStorage.getItem("mnemonic") || "";
 
   const addWallet = (wallet: any) => () => {
     if (wallet.id === 1) {
-      console.log("Add Solana Wallet");
-    }
-    if (wallet.id === 2) {
+      addSolanaWallet(mnemonic);
+    } else if (wallet.id === 2) {
       addEthWallet(mnemonic);
       window.location.reload();
     }
