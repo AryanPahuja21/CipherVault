@@ -1,17 +1,15 @@
-import { useState } from "react";
 import wallets from "../utils/wallets.json";
-import { EthWallet } from "./EthWallet";
-
-const mnemonic = localStorage.getItem("mnemonic");
+import { addEthWallet } from "../wallets/EthWallet";
 
 const NewWalletDialog = () => {
-  const [ethWalletDialog, setEthWalletDialog] = useState(false);
+  const mnemonic = localStorage.getItem("mnemonic") || "";
 
   const addWallet = (wallet: any) => () => {
-    console.log(wallet);
+    if (wallet.id === 1) {
+      console.log("Add Solana Wallet");
+    }
     if (wallet.id === 2) {
-      console.log("ETH wallet");
-      setEthWalletDialog(true);
+      addEthWallet(mnemonic);
     }
   };
 
@@ -33,7 +31,6 @@ const NewWalletDialog = () => {
           </div>
         );
       })}
-      {mnemonic && ethWalletDialog && <EthWallet mnemonic={mnemonic} />}
     </div>
   );
 };

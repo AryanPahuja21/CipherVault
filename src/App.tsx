@@ -6,14 +6,14 @@ import FirstWallet from "./screens/FirstWallet";
 
 function App() {
   const mnemonic = localStorage.getItem("mnemonic");
-  const wallet = localStorage.getItem("wallet");
+  const wallets = localStorage.getItem("ethWallets");
 
   return (
     <div className="h-full bg-[#111111] text-white">
       <BrowserRouter>
         <Routes>
           {mnemonic ? (
-            wallet ? (
+            wallets ? (
               <Route path="/" element={<Wallet />} />
             ) : (
               <Route path="/" element={<FirstWallet />} />
