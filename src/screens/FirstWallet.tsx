@@ -8,7 +8,7 @@ const FirstWallet = () => {
       <Header />
       <div className="w-full flex justify-center">
         <div className="h-[50vh] w-[60vw] flex flex-col justify-center items-center">
-          <h1 className="text-5xl text-center font-bold">
+          <h1 className="text-3xl sm:text-5xl text-center font-bold">
             Start by creating your first wallet
           </h1>
           <div className="mt-14">

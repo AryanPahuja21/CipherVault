@@ -15,7 +15,7 @@ const NewWalletButton = () => {
   return (
     <div>
       <button
-        className="p-4 rounded-md text-xl text-black font-semibold bg-gradient-to-br from-amber-300 to-emerald-500"
+        className="p-3 sm:p-4 rounded-md sm:text-xl text-black font-semibold bg-gradient-to-br from-amber-300 to-emerald-500 hover:to-emerald-400"
         onClick={updateDialog}
       >
         Create New Wallet

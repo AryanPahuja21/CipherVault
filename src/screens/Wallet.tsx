@@ -20,7 +20,7 @@ const Wallet = () => {
             <NewWalletButton />
             <button
               onClick={removeAllWallets}
-              className="bg-red-500 text-white text-xl font-semibold px-4 py-2 rounded-md"
+              className="bg-red-500 hover:bg-red-600 text-white sm:text-xl font-semibold px-4 sm:px-4 sm:py-2 rounded-md"
             >
               Remove All Wallets
             </button>
@@ -29,7 +29,7 @@ const Wallet = () => {
             {ethWallets.map((wallet: any, index: number) => (
               <div key={index} className="bg-[#333] p-4 rounded-md mb-4">
                 <h2 className="text-xl font-bold">Wallet {index + 1}</h2>
-                <p className="text-lg">Address: {wallet.address}</p>
+                <p className="text-lg break-words">Address: {wallet.address}</p>
               </div>
             ))}
           </div>
