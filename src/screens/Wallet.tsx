@@ -4,6 +4,7 @@ import NewWalletButton from "../components/NewWalletButton";
 const Wallet = () => {
   const ethWallets = JSON.parse(localStorage.getItem("ethWallets") || "[]");
   const solWallets = JSON.parse(localStorage.getItem("solWallets") || "[]");
+  const wallets = ethWallets || solWallets;
 
   const removeAllWallets = () => {
     localStorage.removeItem("ethWallets");
@@ -11,14 +12,14 @@ const Wallet = () => {
     window.location.reload();
   };
 
-  console.log(ethWallets);
-  console.log(solWallets);
+  console.log(ethWallets, solWallets);
+
   return (
     <div className="h-full">
       <Header />
       <main>
         <div className="sm:w-[60vw] mx-auto p-4">
-          <div className="flex gap-4">
+          <div className="flex gap-4 justify-center">
             <NewWalletButton />
             <button
               onClick={removeAllWallets}
@@ -28,18 +29,21 @@ const Wallet = () => {
             </button>
           </div>
           <div className="mt-4">
-            {ethWallets.map((wallet: any, index: number) => (
-              <div key={index} className="bg-[#333] p-4 rounded-md mb-4">
-                <h2 className="text-xl font-bold">Wallet {index + 1}</h2>
-                <p className="text-lg break-words">Address: {wallet.address}</p>
+            {wallets && (
+              <div className="mx-auto max-w-[500px] py-4 rounded-md mb-4 ">
+                <header className="w-full mx-auto bg-zinc-800 py-6 rounded-t-md">
+                  <h1 className="text-xl font-bold px-4">Wallet 1</h1>
+                </header>
+                <main className="bg-zinc-700 pt-14 p-7">
+                  <div className="flex flex-col gap-7 justify-between items-center">
+                    <h2 className="mx-auto text-4xl font-bold">$0.0</h2>
+                    <button className="bg-zinc-800 text-white font-semibold px-4 py-2 rounded-md">
+                      Send
+                    </button>
+                  </div>
+                </main>
               </div>
-            ))}
-            {solWallets.map((wallet: any, index: number) => (
-              <div key={index} className="bg-[#333] p-4 rounded-md mb-4">
-                <h2 className="text-xl font-bold">Wallet {index + 1}</h2>
-                <p className="text-lg break-words">Address: {wallet.address}</p>
-              </div>
-            ))}
+            )}
           </div>
         </div>
       </main>
