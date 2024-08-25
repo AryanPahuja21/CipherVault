@@ -1,6 +1,9 @@
 import Header from "../components/Header";
 import NewWalletButton from "../components/NewWalletButton";
 import walletDetails from "../utils/wallets.json";
+import { BsPlusLg } from "react-icons/bs";
+import { PiPaperPlaneTilt } from "react-icons/pi";
+import { PiCurrencyDollarLight } from "react-icons/pi";
 
 const Wallet = () => {
   const ethWallets = JSON.parse(localStorage.getItem("ethWallets") || "[]");
@@ -31,21 +34,24 @@ const Wallet = () => {
           </div>
           <div className="mt-4">
             {wallets && (
-              <div className="mx-auto max-w-[500px] py-4 rounded-md mb-4 ">
+              <div className="mx-auto max-w-[450px] py-4 rounded-md mb-4 ">
                 <header className="w-full mx-auto bg-zinc-900 py-6 rounded-t-md drop-shadow-lg">
                   <h1 className="text-xl font-bold px-4">Wallet 1</h1>
                 </header>
                 <main className="bg-zinc-800 pt-14 p-7 rounded-b-md">
                   <div className="flex flex-col gap-7 justify-between items-center">
                     <h2 className="mx-auto text-4xl font-bold">$0.0</h2>
-                    <div className="flex gap-3">
-                      <button className="bg-zinc-700 text-white text-xl font-semibold px-4 py-2 rounded-full">
+                    <div className="flex gap-5">
+                      <button className="w-20 h-20 bg-zinc-700 hover:bg-zinc-600 text-white font-semibold px-3 py-2 rounded-xl">
+                        <BsPlusLg className="w-8 h-8 mx-auto" />
                         Receive
                       </button>
-                      <button className="bg-zinc-700 text-white text-xl font-semibold px-4 py-2 rounded-full">
+                      <button className="w-20 h-20 bg-zinc-700 hover:bg-zinc-600 text-white font-semibold px-3 py-2 rounded-xl">
+                        <PiPaperPlaneTilt className="w-8 h-8 mx-auto" />
                         Send
                       </button>
-                      <button className="bg-zinc-700 text-white text-xl font-semibold px-4 py-2 rounded-full">
+                      <button className="w-20 h-20 bg-zinc-700 hover:bg-zinc-600 text-white font-semibold px-3 py-2 rounded-xl">
+                        <PiCurrencyDollarLight className="w-8 h-8 mx-auto" />
                         Buy
                       </button>
                     </div>
