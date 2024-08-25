@@ -1,12 +1,14 @@
 [
   {
     "id": 1,
-    "name": "New Solana Wallet",
-    "icon": "/solana.svg"
+    "name": "Solana",
+    "icon": "/solana.svg",
+    "ticker": "SOL"
   },
   {
     "id": 2,
-    "name": "New Ethereum Wallet",
-    "icon": "/ethereum.svg"
+    "name": "Ethereum",
+    "icon": "/ethereum.svg",
+    "ticker": "ETH"
   }
 ]

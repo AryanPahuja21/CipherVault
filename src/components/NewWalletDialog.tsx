@@ -26,7 +26,7 @@ const NewWalletDialog = () => {
             <img src={wallet.icon} alt="" className="w-7 select-none" />
             <div className="flex-1">
               <h1 className="text-xl text-center font-semibold">
-                {wallet.name}
+                New {wallet.name} Wallet
               </h1>
             </div>
           </div>
