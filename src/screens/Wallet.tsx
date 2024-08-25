@@ -35,8 +35,14 @@ const Wallet = () => {
           <div className="mt-4">
             {wallets && (
               <div className="mx-auto max-w-[450px] py-4 rounded-md mb-4 ">
-                <header className="w-full mx-auto bg-zinc-900 py-6 rounded-t-md drop-shadow-lg">
-                  <h1 className="text-xl font-bold px-4">Wallet 1</h1>
+                <header className="w-full mx-auto bg-zinc-900 py-4 rounded-t-md drop-shadow-lg flex items-center gap-4 px-5">
+                  <img
+                    src={walletDetails[0].icon}
+                    className="w-11 p-2 cursor-pointer hover:bg-zinc-800 rounded-md"
+                  />
+                  <h1 className="text-xl font-bold p-2 cursor-pointer hover:bg-zinc-800 rounded-md">
+                    Solana Wallet 1
+                  </h1>
                 </header>
                 <main className="bg-zinc-800 pt-14 p-7 rounded-b-md">
                   <div className="flex flex-col gap-7 justify-between items-center">
