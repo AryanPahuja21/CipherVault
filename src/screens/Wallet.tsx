@@ -3,19 +3,21 @@ import NewWalletButton from "../components/NewWalletButton";
 
 const Wallet = () => {
   const ethWallets = JSON.parse(localStorage.getItem("ethWallets") || "[]");
+  const solWallets = JSON.parse(localStorage.getItem("solWallets") || "[]");
 
   const removeAllWallets = () => {
     localStorage.removeItem("ethWallets");
+    localStorage.removeItem("solWallets");
     window.location.reload();
   };
 
   console.log(ethWallets);
+  console.log(solWallets);
   return (
     <div className="h-full">
       <Header />
       <main>
-        <div className="mx-auto p-4">
-          <h1 className="text-3xl font-bold mb-4">Wallets</h1>
+        <div className="sm:w-[60vw] mx-auto p-4">
           <div className="flex gap-4">
             <NewWalletButton />
             <button
@@ -27,6 +29,12 @@ const Wallet = () => {
           </div>
           <div className="mt-4">
             {ethWallets.map((wallet: any, index: number) => (
+              <div key={index} className="bg-[#333] p-4 rounded-md mb-4">
+                <h2 className="text-xl font-bold">Wallet {index + 1}</h2>
+                <p className="text-lg break-words">Address: {wallet.address}</p>
+              </div>
+            ))}
+            {solWallets.map((wallet: any, index: number) => (
               <div key={index} className="bg-[#333] p-4 rounded-md mb-4">
                 <h2 className="text-xl font-bold">Wallet {index + 1}</h2>
                 <p className="text-lg break-words">Address: {wallet.address}</p>

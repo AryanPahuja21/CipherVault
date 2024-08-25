@@ -6,7 +6,8 @@ import FirstWallet from "./screens/FirstWallet";
 
 function App() {
   const mnemonic = localStorage.getItem("mnemonic");
-  const wallets = localStorage.getItem("ethWallets");
+  const wallets =
+    localStorage.getItem("ethWallets") || localStorage.getItem("solWallets");
 
   return (
     <div className="h-full text-white">

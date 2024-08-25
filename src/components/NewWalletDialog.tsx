@@ -10,8 +10,8 @@ const NewWalletDialog = () => {
       addSolanaWallet(mnemonic);
     } else if (wallet.id === 2) {
       addEthWallet(mnemonic);
-      window.location.reload();
     }
+    window.location.reload();
   };
 
   return (
