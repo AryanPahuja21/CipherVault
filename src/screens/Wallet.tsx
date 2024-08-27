@@ -1,5 +1,6 @@
 import Header from "../components/Header";
 import NewWalletButton from "../components/NewWalletButton";
+import WalletHeader from "../components/WalletHeader";
 import walletDetails from "../utils/wallets.json";
 import { BsPlusLg } from "react-icons/bs";
 import { PiPaperPlaneTilt } from "react-icons/pi";
@@ -35,14 +36,8 @@ const Wallet = () => {
           <div className="mt-4">
             {wallets && (
               <div className="mx-auto max-w-[450px] py-4 rounded-md mb-4 ">
-                <header className="w-full mx-auto bg-zinc-900 py-4 rounded-t-md drop-shadow-lg flex items-center gap-4 px-5">
-                  <img
-                    src={walletDetails[0].icon}
-                    className="w-11 p-2 cursor-pointer hover:bg-zinc-800 rounded-md"
-                  />
-                  <h1 className="text-xl font-bold p-2 cursor-pointer hover:bg-zinc-800 rounded-md">
-                    Solana Wallet 1
-                  </h1>
+                <header>
+                  <WalletHeader />
                 </header>
                 <main className="bg-zinc-800 pt-14 p-7 rounded-b-md">
                   <div className="flex flex-col gap-7 justify-between items-center">
@@ -64,26 +59,44 @@ const Wallet = () => {
                   </div>
                   <div>
                     <div className="mt-10 flex flex-col gap-5">
-                      {walletDetails.map((wallet: any, index: number) => (
-                        <div
-                          key={index}
-                          className="flex justify-between items-center bg-zinc-700 hover:bg-zinc-600 cursor-pointer p-4 rounded-2xl"
-                        >
+                      {solWallets && (
+                        <div className="flex justify-between items-center bg-zinc-700 hover:bg-zinc-600 cursor-pointer p-4 rounded-2xl">
                           <div className="flex gap-4 items-center">
                             <img
-                              src={wallet.icon}
-                              alt={wallet.name}
+                              src={walletDetails[0].icon}
+                              alt={walletDetails[0].name}
                               className="w-10 h-10"
                             />
                             <div>
                               <h3 className="text-xl font-bold">
-                                {wallet.name}
+                                {walletDetails[0].name}
                               </h3>
-                              <p className="text-zinc-400">0 {wallet.ticker}</p>
+                              <p className="text-zinc-400">
+                                0 {walletDetails[0].ticker}
+                              </p>
                             </div>
                           </div>
                         </div>
-                      ))}
+                      )}
+                      {ethWallets && (
+                        <div className="flex justify-between items-center bg-zinc-700 hover:bg-zinc-600 cursor-pointer p-4 rounded-2xl">
+                          <div className="flex gap-4 items-center">
+                            <img
+                              src={walletDetails[1].icon}
+                              alt={walletDetails[1].name}
+                              className="w-10 h-10"
+                            />
+                            <div>
+                              <h3 className="text-xl font-bold">
+                                {walletDetails[1].name}
+                              </h3>
+                              <p className="text-zinc-400">
+                                0 {walletDetails[1].ticker}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      )}
                     </div>
                   </div>
                 </main>
