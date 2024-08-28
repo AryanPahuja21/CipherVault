@@ -10,6 +10,13 @@ const GenerateMnemonic = () => {
   const [copied, setCopied] = useState(false);
   const navigate = useNavigate();
 
+  const handleCopy = () => {
+    navigator.clipboard.writeText(mnemonic).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    });
+  };
+
   return (
     <div className="h-screen flex flex-col items-center text-center">
       <div>
@@ -33,15 +40,8 @@ const GenerateMnemonic = () => {
         </button>
       </div>
       {mnemonic && (
-        <button
-          onClick={function () {
-            navigator.clipboard.writeText(mnemonic);
-          }}
-        >
-          <div
-            className="mt-10 border border-zinc-400 rounded-md bg-zinc-800"
-            onClick={() => setCopied(true)}
-          >
+        <button onClick={handleCopy}>
+          <div className="mt-10 border border-zinc-400 rounded-md bg-zinc-800">
             <div className="grid grid-cols-4 gap-4 p-4">
               {mnemonic.split(" ").map((word, index) => {
                 return (
