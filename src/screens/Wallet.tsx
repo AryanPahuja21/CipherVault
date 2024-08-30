@@ -30,8 +30,7 @@ const Wallet = () => {
       });
   };
 
-  console.log(ethWallets, solWallets);
-
+  console.log(solWallets);
   return (
     <div className="h-full">
       <Header />
@@ -76,7 +75,9 @@ const Wallet = () => {
                         </div>
                         <div className="relative group inline-block">
                           <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1 text-sm bg-zinc-900 text-white rounded opacity-0 group-hover:opacity-100 transition-opacity">
-                            {/* {ethWallets[0].address} */}
+                            {Buffer.from(
+                              solWallets[index]._keypair.publicKey.toString()
+                            )}
                           </span>
                           <button
                             className="bg-neutral-700 hover:bg-neutral-600 text-white font-semibold px-4 py-2 rounded-md"
@@ -142,7 +143,7 @@ const Wallet = () => {
                         </div>
                         <div className="relative group inline-block">
                           <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1 text-sm bg-zinc-900 text-white rounded opacity-0 group-hover:opacity-100 transition-opacity">
-                            {ethWallets[0].address}
+                            {ethWallets[index].address}
                           </span>
                           <button
                             className="bg-neutral-700 hover:bg-neutral-600 text-white font-semibold px-4 py-2 rounded-md"
